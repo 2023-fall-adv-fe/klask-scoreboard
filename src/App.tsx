@@ -9,30 +9,35 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { Home } from './Home';
+import { Setup } from './Setup';
+import { Play } from './Play';
+
 const router = createHashRouter([
   {
     path: "/",
-    element: <div>Home</div>,
+    element: <Home />,
   },
   {
     path: "/setup",
-    element: <div>Setup</div>,
+    element: <Setup />,
   },
   {
     path: "/play",
-    element: <div>Play</div>,
+    element: <Play />,
   },
 ]);
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Button variant="outlined" size="large" startIcon={<SmartDisplay />}>
-        Play Game
-      </Button>
       <RouterProvider router={router} />
     </div>
   );
 }
+
+/* <Button variant="outlined" size="large" startIcon={<SmartDisplay />}>
+        Play Game
+      </Button> */
 
 export default App;
